@@ -1,2 +1,3 @@
 class GeneralDatum < ApplicationRecord
+    
 end
