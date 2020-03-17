@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password: 123
+  pool: 5
+
+development:
+  <<: *default
+  database: dieta_maida_development
+
+  
+test:
+  <<: *default
+  database: dieta_maida_test
+
+production:
+  <<: *default
+  database: dieta_maida_production
+  username: dieta_maida
+  password: <%= ENV['DIETA_MAIDA_DATABASE_PASSWORD'] %>
