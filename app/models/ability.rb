@@ -6,10 +6,10 @@ class Ability
         can :dashboard, :all
         can :access, :rails_admin
         can :read, :dashboard
-        can :manage, User, id: user.id
-        can :manage, Diet, id: user.id
+        can :update, User, id: user.id
+        can :manage, Diet
         
-        can :manage, GeneralDatum, id: user.id
+        can :manage, GeneralDatum
        #to allow access, you have to put this.
   end
 end

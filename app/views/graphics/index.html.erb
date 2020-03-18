@@ -1,0 +1,140 @@
+<script>
+    < %
+    require 'json'
+    require 'fusioncharts-rails'
+
+
+    def getChart
+
+    # Chart appearance configuration
+    chartAppearancesConfigObj = Hash.new
+    chartAppearancesConfigObj = {
+        "caption" => "Countries With Most Oil Reserves [2017-18]",
+        "subCaption" => "In MMbbl = One Million barrels",
+        "xAxisName" => "Country",
+        "yAxisName" => "Reserves (MMbbl)",
+        "numberSuffix" => "K",
+        "theme" => "fusion"
+    }
+
+    # An array of hash objects which stores data
+    chartDataObj = [{
+            "Venezuela" => "290"
+        },
+        {
+            "Saudi" => "260"
+        },
+        {
+            "Canada" => "180"
+        },
+        {
+            "Iran" => "140"
+        },
+        {
+            "Russia" => "115"
+        },
+        {
+            "UAE" => "100"
+        },
+        {
+            "US" => "30"
+        },
+        {
+            "China" => "30"
+        }
+    ]
+
+    # Chart data template to store data in "Label" & "Value"
+    format
+    labelValueTemplate = "{ \"label\": \"%s\", \"value\": \"%s\" },"
+
+    # Chart data as JSON string
+    labelValueJSONStr = ""
+
+    chartDataObj.each {
+        |
+        item |
+            data = labelValueTemplate % [item.keys[0], item[item.keys[0]]]
+        labelValueJSONStr.concat(data)
+    }
+
+    # Removing trailing comma character
+    labelValueJSONStr = labelValueJSONStr.chop
+
+    # Chart JSON data template
+    chartJSONDataTemplate = "{ \"chart\": %s, \"data\": [%s] }"
+
+    # Final Chart JSON data from template
+    chartJSONDataStr = chartJSONDataTemplate % [chartAppearancesConfigObj.to_json, labelValueJSONStr]
+
+    # Chart rendering
+    chart = Fusioncharts::Chart.new({
+        width: "600",
+        height: "400",
+        type: "column2d",
+        renderAt: "chartContainer",
+        dataSource: chartJSONDataStr
+    })
+
+    end
+        %
+        >
+</script>
+<div class="card text-center">
+    <div class="card-header">
+        <h1>Gráfico de Peso</h1>
+    </div>
+    <div class="card-body">
+        <html>
+
+        <head>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+                google.charts.load('current', {
+                    'packages': ['corechart']
+                });
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ['Year', 'Sales', 'Expenses'],
+                        ['20', 1000, 400],
+                        ['2014', 1170, 460],
+                        ['2015', 660, 1120],
+                        ['2016', 1030, 540]
+                    ]);
+
+                    var options = {
+                        title: 'Performa da sua Dieta',
+                        hAxis: {
+                            title: 'Período',
+                            titleTextStyle: {
+                                color: '#333'
+                            }
+                        },
+                        vAxis: {
+                            minValue: 0
+                        }
+                    };
+
+                    var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+                    chart.draw(data, options);
+                }
+            </script>
+        </head>
+
+        <body>
+            <div id="chart_div" style="width: 100%; height: 500px;"></div>
+        </body>
+
+        </html>
+
+        <%= link_to rails_admin_path do %>
+        <%= content_tag :span, "cadastro de dieta", :class => "btn btn-primary" %>
+        <% end %>
+
+    </div>
+    <div class="card-footer text-muted">
+        2 days ago
+    </div>
+</div>

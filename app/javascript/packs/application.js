@@ -1,19 +1,14 @@
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
-require("Chart.bundleck").start()
+require("fusioncharts-rails").start()
 require("turbolinks").start()
-require("chart2").start()
-require("nvd3").start()
-require("google").start()
+require("chartkick")
+require("highcharts/highcharts-more")
+require("apexcharts").start()
 require("highcharts").start()
 require("@rails/ujs").start()
-require("turbolinks").start()
+require("jquery").start()
 require("@rails/activestorage").start()
 require("channels")
 require("plugins/jquery/jquery.min")
@@ -22,11 +17,18 @@ require("demo")
 require("plugins/bootstrap/js/bootstrap.bundle.min")
 require("dist/js/adminlte.min")
 require("channels")
+var FusionCharts = require("src/fusioncharts/fusioncharts");
 
+// Require charts from fusioncharts
+var Charts = require("src/fusioncharts/fusioncharts.charts");
 
-// Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
+// Require export module from fusioncharts
+var ExcelExport = require("src/fusioncharts/fusioncharts.excelexport");
+
+// Require theme from fusioncharts
+var FusionTheme = require("src/fusioncharts/themes/fusioncharts.theme.fusion");
+
+// Add charts and themes and export module as dependency
+Charts(FusionCharts);
+FusionTheme(FusionCharts);
+ExcelExport(FusionCharts);

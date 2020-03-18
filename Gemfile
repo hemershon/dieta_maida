@@ -11,7 +11,9 @@ gem 'cancancan'
 gem 'carrierwave'
 gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 gem 'rails_admin_rollincode', '~> 1.0'
-gem 'simple_form'
+gem 'metrics-graphics-rails', '~> 2.9'
+gem 'fusioncharts-rails'
+gem "highcharts-rails"
 
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
