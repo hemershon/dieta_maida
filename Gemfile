@@ -10,7 +10,9 @@ gem 'devise'
 gem 'cancancan'
 gem 'carrierwave'
 gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
-# Use postgresql as the database for Active Record
+gem 'rails_admin_rollincode', '~> 1.0'
+gem 'simple_form'
+
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
