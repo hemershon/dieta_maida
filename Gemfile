@@ -7,8 +7,9 @@ ruby '2.7.0'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'rails_admin', '~> 2.0'
 gem 'devise'
-gem 'apexcharts'
-gem 'groupdate'
+gem 'cancancan'
+gem 'carrierwave'
+gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server

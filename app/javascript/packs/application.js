@@ -6,7 +6,12 @@
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
-require("apexcharts").start()
+require("Chart.bundleck").start()
+require("turbolinks").start()
+require("chart2").start()
+require("nvd3").start()
+require("google").start()
+require("highcharts").start()
 require("channels")
 
 
