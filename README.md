@@ -34,6 +34,8 @@ Para rodar a ferramenta:
 
 ``docker-compose up``
 
+``docker-compose run web yarn install --check-file``
+
 
 ## User 
 
