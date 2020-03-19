@@ -31,10 +31,11 @@ Para rodar a ferramenta:
 
 ``docker-compose run web rails db:create db:migrate db:seed``
 
+``docker-compose run web yarn install --check-file``
+
 
 ``docker-compose up``
 
-``docker-compose run web yarn install --check-file``
 
 
 ## User 
