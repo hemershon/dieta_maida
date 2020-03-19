@@ -14,13 +14,24 @@ A ferramenta foi desenvolvida na línguagem Ruby on Rails com o uso do banco pos
 ### Configuração
 
 Ruby on Rails 2.7.0
+
 Postgresql 
+
 Docker
+
 Google Charts
 
 Para rodar a ferramenta:
 
 ``sudo docker-compose build``
+
+
 ``docker-compose run web bundle install``
+
+
 ``docker-compose run web rails db:create db:migrate db:seed``
+
+
 ``docker-compose up``
+
+
