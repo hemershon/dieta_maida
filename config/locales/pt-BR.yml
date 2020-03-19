@@ -9,11 +9,7 @@ pt-BR:
         diet:
           one: Dieta
           other: Dietas
-          general_datum: 
-            one: Dado Geral
-            outher: Dados Gerais
-
-      attributes:
+          attributes:
         client:
           name: "Nome"
           company_name: "Nome da Empresa"
@@ -42,8 +38,7 @@ pt-BR:
         navigation: "Navegação"
         log_out: "Terminar Sessão"
         ago: "atrás"
-      model_label:
-        diet: "Dieta"
+
       flash:
         successful: "%{name} %{action} com sucesso"
         error: "%{name} %{action} sem sucesso"
