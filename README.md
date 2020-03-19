@@ -36,6 +36,9 @@ Para rodar a ferramenta:
 
 ``docker-compose up``
 
+## Testando 
+``docker-compose run web bundle exec rspec`` 
+
 
 
 ## User 
@@ -44,3 +47,7 @@ Para rodar a ferramenta:
 
 
 ``teste@teste.com senha 123456``
+
+## Acesso a aplicação
+[Gestão de Dieta Maida](https://dietav1.herokuapp.com/)
+
