@@ -35,3 +35,7 @@ Para rodar a ferramenta:
 ``docker-compose up``
 
 
+## User 
+
+``maida@teste.com senha 123456``
+``teste@teste.com senha 123456``
