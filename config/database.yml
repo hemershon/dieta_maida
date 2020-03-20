@@ -18,5 +18,5 @@ test:
 production:
   <<: *default
   database: dieta_maida_production
-  username: dieta_maida
-  password: <%= ENV['DIETA_MAIDA_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: <%= ENV['123'] %>
